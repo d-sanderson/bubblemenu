@@ -1,0 +1,42 @@
+:root {
+  background-color: rgb(25, 3, 103);
+  font-family: 'Lato', sans-serif;
+
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+h2 {
+  margin: 5% 0 0 10%;
+  text-align: left;
+  color: white;
+}
+
+button {
+  font-family: 'Lato', sans-serif;
+  color: rgb(55, 126, 250);
+  font-size: 1rem;
+  background-color: black;
+}
+.apps, .fbs, .bowls, .sandwiches {
+  display: flex;
+  height: 200px;
+  margin: 5% 10% 0 10%;
+}
+
+.app, .fb, .sandwich, .bowl {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  flex: 1 0 8%;
+  background:#DDD;
+  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+  cursor:pointer;
+  user-select: none;
+}
+
+div:active {
+  box-shadow: 0 0 5px -1px  rgb(25, 3, 103);
+}
