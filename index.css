@@ -14,11 +14,13 @@ h2 {
   color: white;
 }
 
-button {
+div {
   font-family: 'Lato', sans-serif;
-  color: rgb(55, 126, 250);
-  font-size: 1rem;
-  background-color: black;
+  text-shadow:
+  -.25px -.25px 0 #000,
+  .25px -.25px 0 #000,
+  -.25px .25px 0 #000,
+  .25px .25px 0 #000;
 }
 .apps, .fbs, .bowls, .sandwiches {
   display: flex;
@@ -32,11 +34,29 @@ button {
 	justify-content: center;
   flex: 1 0 8%;
   background:#DDD;
-  box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
   cursor:pointer;
   user-select: none;
 }
 
 div:active {
   box-shadow: 0 0 5px -1px  rgb(25, 3, 103);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .apps, .fbs, .bowls, .sandwiches {
+    display: flex;
+    height: 200px;
+    margin: 5% 10% 0 10%;
+    flex-flow: row wrap;
+  }
+  .app, .fb, .sandwich, .bowl {
+    display: flex;
+    align-items: space-between;
+    justify-content: center;
+    flex: 1 0 30%;
+    background:#DDD;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+    cursor:pointer;
+    user-select: none;
+  }
 }

@@ -55,7 +55,6 @@ function click(e) {
 function sortItems(e) {
   let menuItems = jQuery(e.target.parentNode.children)
   let classname = e.target.parentNode.className
-  console.log(classname)
   menuItems.sort(function(a, b){ return $(b).data("clicks")-$(a).data("clicks")});
   $('.'+classname).html(menuItems)
   }
