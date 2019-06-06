@@ -57,19 +57,7 @@ function sortItems(e) {
   let classname = e.target.parentNode.className
   console.log(classname)
   menuItems.sort(function(a, b){ return $(b).data("clicks")-$(a).data("clicks")});
-
-  if (classname === 'apps') {
-    $(".apps").html(menuItems);
-}
-  else if (classname ==='fbs') {
-    $(".fbs").html(menuItems);
-}
-  else if (classname ==='sandwiches') {
-    $(".sandwiches").html(menuItems);
-}
-  else if (classname ==='bowls') {
-    $(".bowls").html(menuItems);
-}
+  $('.'+classname).html(menuItems)
   }
 
 
