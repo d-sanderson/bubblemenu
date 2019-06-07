@@ -22,13 +22,13 @@ div {
   -.25px .25px 0 #000,
   .25px .25px 0 #000;
 }
-.apps, .fbs, .bowls, .sandwiches {
+.apps, .fbs, .bowls, .sandwiches, .desserts {
   display: flex;
   height: 200px;
   margin: 5% 10% 0 10%;
 }
 
-.app, .fb, .sandwich, .bowl, .menu-item {
+.menu-item {
   display: flex;
 	align-items: center;
 	justify-content: center;
