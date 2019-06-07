@@ -43,7 +43,7 @@ div:active {
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .apps, .fbs, .bowls, .sandwiches {
+  .apps, .fbs, .bowls, .sandwiches, .desserts {
     display: flex;
     height: 200px;
     width: 300px;
