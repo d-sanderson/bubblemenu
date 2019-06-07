@@ -46,17 +46,18 @@ div:active {
   .apps, .fbs, .bowls, .sandwiches {
     display: flex;
     height: 200px;
+    width: 300px;
     margin: 5% 10% 0 10%;
     flex-flow: row wrap;
   }
-  .app, .fb, .sandwich, .bowl {
+  .menu-item {
     display: flex;
-    align-items: space-between;
+    align-items: center;
     justify-content: center;
     flex: 1 0 30%;
     background:#DDD;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    cursor:pointer;
+    cursor: pointer;
     user-select: none;
   }
 }
