@@ -10,7 +10,7 @@ let wichesArr = ['Chimichurri Chicken', 'Patty Melt', 'Grilled Mozzarella & Port
 
 for (var i = 0; i < appsArr.length; i++) {
 let div = document.createElement('div');
-div.className = 'app'
+div.className = 'menu-item'
 div.setAttribute('data-clicks', 0)
 div.value = appsArr[i]
 div.innerText = appsArr[i]
@@ -19,7 +19,7 @@ apps.appendChild(div);
 
 for (var i = 0; i < fbsArr.length; i++) {
   let div = document.createElement('div');
-  div.className = 'fb'
+  div.className = 'menu-item'
   div.setAttribute('data-clicks', 0)
   div.value = fbsArr[i]
   div.innerText = fbsArr[i]
@@ -28,7 +28,7 @@ for (var i = 0; i < fbsArr.length; i++) {
 
 for (var i = 0; i < wichesArr.length; i++) {
   let div = document.createElement('div');
-  div.className = 'sandwich'
+  div.className = 'menu-item'
   div.setAttribute('data-clicks', 0)
   div.value = wichesArr[i]
   div.innerText = wichesArr[i]
@@ -36,13 +36,12 @@ for (var i = 0; i < wichesArr.length; i++) {
 }
 for (var i = 0; i < bowlsArr.length; i++) {
   let div = document.createElement('div');
-  div.className = 'bowl'
+  div.className = 'menu-item'
   div.setAttribute('data-clicks', 0)
   div.value = bowlsArr[i]
   div.innerText = bowlsArr[i]
   bowls.appendChild(div);
 }
-
 
 function click(e) {
   if (!e.target.getAttribute('data-clicks'))
@@ -59,25 +58,8 @@ function sortItems(e) {
   $('.'+classname).html(menuItems)
   }
 
+let items = document.querySelectorAll('.menu-item')
 
-let appBtns = apps.querySelectorAll('.app');
-let fbBtns = fbs.querySelectorAll('.fb');
-let wichBtns = sandwiches.querySelectorAll('.sandwich');
-let bowlBtns = bowls.querySelectorAll('.bowl');
-
-appBtns.forEach(btn => btn.addEventListener('click', click))
-appBtns.forEach(btn => btn.addEventListener('click', sortItems))
-
-
-fbBtns.forEach(btn => btn.addEventListener('click', click))
-fbBtns.forEach(btn => btn.addEventListener('click', sortItems))
-
-
-wichBtns.forEach(btn => btn.addEventListener('click', click))
-wichBtns.forEach(btn => btn.addEventListener('click', sortItems))
-
-
-bowlBtns.forEach(btn => btn.addEventListener('click', click))
-bowlBtns.forEach(btn => btn.addEventListener('click', sortItems))
-
+items.forEach(item => item.addEventListener('click', click))
+items.forEach(item => item.addEventListener('click', sortItems))
 

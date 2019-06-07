@@ -28,7 +28,7 @@ div {
   margin: 5% 10% 0 10%;
 }
 
-.app, .fb, .sandwich, .bowl {
+.app, .fb, .sandwich, .bowl, .menu-item {
   display: flex;
 	align-items: center;
 	justify-content: center;
