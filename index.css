@@ -45,11 +45,13 @@ div:active {
   flex-flow: row wrap;
   display: flex;
   margin: 5% 25% 0 25%;
+  padding: 0 5% 0 5%;
   height:20vh;
   font-size: 1.2rem;
   background-color: #DDD;
   overflow: scroll;
   font-family:'Courier New', Courier, monospace;
+  text-align: center;
 
 }
 
@@ -58,8 +60,8 @@ div:active {
 
 }
 
-#totaltxt {
-  justify-content: space-between
+div#totaltxt {
+  margin-left: auto;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

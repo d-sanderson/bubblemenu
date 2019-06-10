@@ -91,7 +91,7 @@ function sortItems(e) {
     let currentTotal = parseInt(totalDisplay.innerText)
     let itemPrice = parseInt(e.target.getAttribute('data-price'));
     let total =  (currentTotal + itemPrice) + ((currentTotal + itemPrice) * tax);
-    total = Number(total.toFixed(2));
+    total = total.toFixed(2);
     displayItemName(e);
     displayTotal(total);
 
