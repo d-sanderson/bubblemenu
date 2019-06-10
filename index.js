@@ -8,7 +8,7 @@ let appsArr = [{name: 'Brussells', price: 8}, {name: 'Harissa Dip', price: 11}, 
 let fbsArr = [{name: 'Margharita', price: 11}, {name: 'Curried Cauliflower', price: 12}, {name: 'Pork Belly and Blue Cheese', price: 14}, {name: 'Steaks and Ports', price: 15}]
 let bowlsArr = [{name: 'Korean Fried Chicken', price: 16}, {name: 'Salmon and Himalayan Rice', price: 18}, {name: 'Harissa Portobella', price: 14}, {name: 'New Mexico Shrimp & Grits', price: 18}, {name: 'Steak Frites', price: 21}]
 let wichesArr = [{name: 'Chimichurri Chicken', price: 11}, {name: 'Patty Melt', price: 12}, {name: 'Grilled Mozzarella & Portabella', price: 9}, {name:'Sixty-Six Green Chile Cheeseburger', price: 14}, {name: 'Crispy Pork Belly Bahn Mi', price: 14}, {name: 'Pastrami Rueben', price: 13}]
-let dessertsArr = [{name: 'Chocolate and Whipped Cream Pudding', price: 6}, {name: 'Banana ShortBread', price: 7}, {name: 'Green Chile Apple Empanada', price: 8}]
+let dessertsArr = [{name: 'Chocolate and Whipped Cream Pudding', price: 6}, {name: 'Bananna ShortBread', price: 7}, {name: 'Green Chile Apple Empanada', price: 8}]
 
 let totalDisplay = document.querySelector('#total')
 
@@ -87,11 +87,11 @@ function sortItems(e) {
   }
 
   function addTotal(e) {
-
+    let tax = .0785;
     let currentTotal = parseInt(totalDisplay.innerText)
     let itemPrice = parseInt(e.target.getAttribute('data-price'));
-    let total = currentTotal + itemPrice;
-
+    let total =  (currentTotal + itemPrice) + ((currentTotal + itemPrice) * tax);
+    total = Number(total.toFixed(2));
     displayItemName(e);
     displayTotal(total);
 

@@ -44,11 +44,11 @@ div:active {
 .container {
   flex-flow: row wrap;
   display: flex;
-  margin: 5% 10% 0 25%;
-  width: 50%;
+  margin: 5% 25% 0 25%;
+  height:20vh;
   font-size: 1.2rem;
   background-color: #DDD;
-  overflow-y: auto;
+  overflow: scroll;
   font-family:'Courier New', Courier, monospace;
 
 }
@@ -79,5 +79,6 @@ div:active {
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
     cursor: pointer;
     user-select: none;
+
   }
 }
