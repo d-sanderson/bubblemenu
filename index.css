@@ -9,7 +9,7 @@ h1 {
   color: white;
 }
 h2 {
-  margin: 5% 0 0 10%;
+  margin: 5% 10% 0 10%;
   text-align: left;
   color: white;
 }
@@ -20,7 +20,7 @@ h2 {
   margin: 5% 10% 0 10%;
 }
 
-.menu-item {
+.menu-item{
   display: flex;
 	align-items: center;
 	justify-content: center;
@@ -39,6 +39,27 @@ h2 {
 
 div:active {
   box-shadow: 0 0 5px -1px  rgb(25, 3, 103);
+}
+
+.container {
+  flex-flow: row wrap;
+  display: flex;
+  margin: 5% 10% 0 25%;
+  width: 50%;
+  font-size: 1.2rem;
+  background-color: #DDD;
+  overflow-y: auto;
+  font-family:'Courier New', Courier, monospace;
+
+}
+
+.order-item  {
+  flex: 1 0 100%;
+
+}
+
+#totaltxt {
+  justify-content: space-between
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
