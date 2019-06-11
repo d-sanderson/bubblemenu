@@ -41,7 +41,7 @@ div:active {
   box-shadow: 0 0 5px -1px  rgb(25, 3, 103);
 }
 
-.container {
+.orderitems {
   flex-flow: row wrap;
   display: flex;
   margin: 5% 25% 0 25%;
@@ -62,6 +62,12 @@ div:active {
 
 div#totaltxt {
   margin-left: auto;
+   text-shadow:
+  -.25px -.25px 0 #000,
+  .25px -.25px 0 #000,
+  -.25px .25px 0 #000,
+  .25px .25px 0 #000;
+
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

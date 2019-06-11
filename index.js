@@ -3,6 +3,7 @@ let fbs = document.querySelector('.fbs');
 let sandwiches = document.querySelector('.sandwiches');
 let bowls = document.querySelector('.bowls');
 let desserts = document.querySelector('.desserts');
+const tax = .0785;
 
 let appsArr = [{name: 'Brussells', price: 8}, {name: 'Harissa Dip', price: 11}, {name: 'Hummus Trio', price: 12 },{name:'Zuchini Ribbons', price: 8} , {name: 'Calamari', price: 12}, {name: 'Baked Brie', price: 12},{ name: 'Really Good Fries', price: 7}, {name: 'Blistered Shishitos', price: 11}]
 let fbsArr = [{name: 'Margharita', price: 11}, {name: 'Curried Cauliflower', price: 12}, {name: 'Pork Belly and Blue Cheese', price: 14}, {name: 'Steaks and Ports', price: 15}]
@@ -80,25 +81,38 @@ function sortItems(e) {
     let itemName = e.target.value
     let itemPrice = parseInt(e.target.getAttribute('data-price'))
     let div = document.createElement('div');
+    div.setAttribute('data-price', e.target.getAttribute('data-price'))
     div.innerText = `${itemName}.....$${itemPrice}`
     div.className = 'order-item'
-    document.querySelector('.container').insertBefore(div, document.querySelector('#totaltxt'));
+    document.querySelector('.orderitems').insertBefore(div, document.querySelector('#totaltxt'));
 
   }
 
   function addTotal(e) {
-    let tax = .0785;
     let currentTotal = parseInt(totalDisplay.innerText)
     let itemPrice = parseInt(e.target.getAttribute('data-price'));
     let total =  (currentTotal + itemPrice) + ((currentTotal + itemPrice) * tax);
     total = total.toFixed(2);
     displayItemName(e);
     displayTotal(total);
-
   }
 
   function displayTotal(total) {
     totalDisplay.innerText = `${total}`
+  }
+
+  function removeItem(e) {
+    let item = e.target
+    if (item.className == 'order-item') {
+    itemPrice = parseInt(item.getAttribute('data-price'));
+    itemPrice = ((itemPrice * tax) + itemPrice);
+    let currentTotal = parseInt(totalDisplay.innerText);
+    let newTotal = (currentTotal - itemPrice).toFixed(2);
+    newTotal < 0 ? newTotal = 0: newTotal;
+    console.log(`${currentTotal} - ${itemPrice} = ${newTotal}`);
+    displayTotal(newTotal);
+    item.remove();
+    }
   }
 
 let items = document.querySelectorAll('.menu-item')
@@ -106,4 +120,9 @@ items.forEach(item => item.addEventListener('click', (e) => {
   click(e);
   sortItems(e);
   addTotal(e);
-}))
+}));
+
+let orderItems = document.querySelectorAll('.orderitems');
+orderItems.forEach(orderItem => orderItem.addEventListener('click', (e) => {
+  removeItem(e);
+}));
